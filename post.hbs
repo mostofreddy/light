@@ -1,0 +1,95 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+<div class="paralax-bg" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
+<div class="jumbotron paralax-up">
+    <div class="container">
+        <h1>{{@blog.title}}</h1>
+        <p>{{@blog.description}}</p>
+    </div>
+</div>
+
+
+<main class="container container-main" role="main">
+
+    <article class="{{post_class}}">
+
+        {{! Everything inside the #post tags pulls data from the post }}
+        {{#post}}
+
+            <!-- meta for facebook / twitter / google -->
+            
+            {{#contentFor "meta"}}
+                <!-- Classic Meta Tags -->
+                <title>{{title}}</title>
+                <meta name="description" content="{{excerpt characters="220"}}">
+
+                <!-- Open Graph Meta Tags -->
+                <meta property="og:type" content="website"/>
+                <meta property="og:title" content="{{title}}"/>
+                <meta property="og:description" content="{{excerpt characters="220"}}"/>
+                <meta property="og:site_name" content="Mostofreddy | blog"/>
+                <meta property="og:url" content="http://mostofreddy.com.ar{{url}}"/>
+                <meta property="og:image" content="http://mostofreddy.com.ar{{url}}"/>
+                <meta property="fb:admins" content="100006090000201"/>
+
+                <!-- Twitter Card Meta Tags -->
+                <meta name="twitter:card" content="summary"/>
+                <meta name="twitter:title" content="{{title}}"/>
+                <meta name="twitter:description" content="{{excerpt characters="220"}}"/>
+                <meta name="twitter:image" content="http://mostofreddy.com.ar{{url}}"/>
+                <meta name="twitter:site" content="@mostofreddy"/>
+                <meta name="twitter:creator" content="@mostofreddy"/>
+            {{/contentFor}}
+
+
+
+            <header class="post-header">
+                <span class="post-meta">
+                    <i class="fa fa-calendar"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date published_at timeago="true"}}</time> 
+                    &nbsp;<i class="fa fa-tag"></i> {{tags prefix="Tagged in: "}}
+                </span>
+                <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
+            </header>
+
+            <section class="post-content">
+                {{content}}
+            </section>
+
+
+            <section class="author">
+                <div class="authorimage" style="background: #f00 url({{author.image}}) no-repeat;"></div>
+                <p class="attr">Author</p>
+                <h4><a href="{{author.website}}">{{author.name}}</a></h4>
+                <p class="bio">{{author.bio}}</p>
+            </section>
+
+
+            <!-- DISCUS
+            --------------------------------------->
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'mostofreddy'; // required: replace example with your forum shortname
+                var disqus_identifier = '{{id}}';
+                var disqus_title = '{{{title}}}';
+                //var disqus_url = '{{url}}';
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+
+        {{/post}}
+
+    </article>
+
+</main>

@@ -1,0 +1,190 @@
+/* Table of Contents
+************************************************************************/
+
+/*
+ 0.  Includes
+ 1.  Fonts
+ 2.  General
+ 3.  Main
+ 4.  Post
+ 4.  Paralax
+
+
+ 3.  Utilities
+ 4.  General
+ 5.  Single Post
+ 6.  Third Party Elements
+ 7.  Pagination
+ 8.  Footer
+ 9.  Media Queries (Tablet)
+ 10. Media Queries (Mobile)
+*/
+
+/* 0. Includes
+************************************************************************/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+
+
+/* 1. Fonts
+************************************************************************/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    /*font-family: 'Roboto', cursive !important;*/
+    font-family: 'Roboto', Arial !important;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.jumbotron h1 {
+    /*font-family: 'Oleo Script', cursive !important;*/
+    font-family: 'Oleo Script', Arial !important;
+}
+
+
+/* 2. General
+************************************************************************/
+
+a {
+    color: #5D5D5D;
+}
+a:hover {
+    text-decoration:none;
+    color: #E70505;
+}
+
+p {
+    font-size:16px;
+    line-height: 22px;
+}
+
+/* 3. Main
+************************************************************************/
+.container-main {
+    max-width: 900px;
+    background-color:#fff;
+}
+
+.btn-readmore {
+    text-transform: uppercase;
+    /*background-color: #FF5252;
+    background-color: #FC2727;*/
+    background-color: #FF1818;
+    border-color: #E70505;
+    color: #fff;
+    margin-top:15px;
+}
+.btn-readmore:hover {
+    background-color: #E70505;
+    border-color: #E70505;
+}
+
+.site-footer {
+    background-color: #212327;
+    color: #fff;
+    font-size: 1.5rem;
+    letter-spacing: 0.2px;
+    padding: 50px 0;
+    text-align: center;
+}
+.site-footer a {
+    color: #E70505;
+}
+
+/* 4. Post
+************************************************************************/
+.container-main .post {
+    border-bottom: 1px dotted #ccc;
+    padding-bottom:40px;
+    padding-top:40px;
+}
+
+.container-main .post:first-child {
+    padding-top: 20px;
+}
+
+/* header */
+.post-header h1 {
+    margin-top:5px;
+}
+.post-header {
+    padding-bottom:10px;
+}
+
+/* meta */
+.post-meta a {
+    color: #FF1818;
+    color: #E70505;
+}
+.post-meta i {
+    color: #898989;
+}
+
+/* author */
+.author {
+    margin-top:50px;
+    margin-bottom:30px;
+    padding-top:30px;
+    padding-bottom:20px;
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+}
+.author .attr {
+    font-size:12px;
+    text-transform: uppercase;
+    margin-bottom:0;
+}
+
+.author h4 {
+    font-weight: 400;
+    margin-top:5px;
+}
+.author .authorimage {
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+    border-color: #333;
+    background-position: center center !important;
+    background-size: cover !important;
+    float: left;
+    margin-right: 10px;
+    margin-bottom:30px;
+}
+
+/* 5. Paralax
+************************************************************************/
+.paralax-bg {
+    background-position: center center;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    top:0;
+    left:0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:300px;
+}
+.paralax-up {
+    height: 300px;
+    color: white;
+    text-shadow: #444 0 1px 1px;
+    background:transparent;
+}
+
+
+

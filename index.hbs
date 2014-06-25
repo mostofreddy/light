@@ -1,0 +1,78 @@
+{{#contentFor "meta"}}
+    <!-- Classic Meta Tags -->
+    <title>Mostofreddy | blog</title>
+    <meta name="description" content="{{meta_description}}">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Mostofreddy | blog"/>
+    <meta property="og:description" content="{{meta_description}}"/>
+    <meta property="og:site_name" content="Mostofreddy | blog"/>
+    <meta property="og:url" content="http://mostofreddy.com.ar"/>
+    <meta property="og:image" content="http://mostofreddy.com.ar"/>
+    <meta property="fb:admins" content="100006090000201"/>
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Mostofreddy | blog"/>
+    <meta name="twitter:description" content="{{meta_description}}"/>
+    <meta name="twitter:image" content="http://mostofreddy.com.ar"/>
+    <meta name="twitter:site" content="@mostofreddy"/>
+    <meta name="twitter:creator" content="@mostofreddy"/>
+{{/contentFor}}
+
+
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+<div class="paralax-bg" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
+<div class="jumbotron paralax-up">
+    <div class="container">
+        <h1>{{@blog.title}}</h1>
+        <p>{{@blog.description}}</p>
+    </div>
+</div>
+
+{{! The main content area on the homepage }}
+<main class="container container-main" role="main">
+
+    {{! Each post will be output using this markup }}
+    {{#foreach posts}}
+
+    <article class="{{post_class}}">
+
+        <header class="post-header">
+            <span class="post-meta">
+                <i class="fa fa-calendar"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date published_at timeago="true"}}</time> 
+                &nbsp;<i class="fa fa-tag"></i> {{tags prefix="Tagged in: "}}
+            </span>
+            <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
+        </header>
+
+        <section class="post-excerpt">
+            <p>{{excerpt characters="300"}}&hellip;</p>
+        </section>
+
+        <a href="{{url}}" class="btn btn-sm btn-readmore">Read more <i class="fa fa-angle-double-right "></i></a>
+            
+    </article>
+
+    {{/foreach}}
+
+    {{!! After all the posts, we have the previous/next pagination links }}
+
+    <ul class="pager">
+
+        {{#if pagination.prev}}
+            <li class="previous"><a href="{{pageUrl pagination.prev}}">&larr; Older</a></li>
+        {{/if}}
+        
+        {{#if pagination.next}}
+            <li class="next"><a href="{{pageUrl pagination.next}}">Newer &rarr;</a></li>
+        {{/if}}
+
+    </ul>
+
+</main>
