@@ -3,15 +3,6 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-<div class="paralax-bg" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
-<div class="jumbotron paralax-up">
-    <div class="container">
-        <h1>{{@blog.title}}</h1>
-        <p>{{@blog.description}}</p>
-    </div>
-</div>
-
-
 <main class="container container-main" role="main">
 
     <article class="{{post_class}}">
@@ -21,29 +12,6 @@
 
             <!-- meta for facebook / twitter / google -->
             
-            {{#contentFor "meta"}}
-                <!-- Classic Meta Tags -->
-                <title>{{title}}</title>
-                <meta name="description" content="{{excerpt characters="220"}}">
-
-                <!-- Open Graph Meta Tags -->
-                <meta property="og:title" content="{{title}}"/>
-                <meta property="og:url" content="http://mostofreddy.com.ar{{url}}"/>
-                <meta property="og:site_name" content="Mostofreddy | blog"/>
-                <meta property="og:type" content="blog"/>
-                <meta property="og:description" content="{{excerpt characters="220"}}" />
-
-                <!-- Twitter Card Meta Tags -->
-                <meta name="twitter:card" content="summary"/>
-                <meta name="twitter:site" content="@mostofreddy"/>
-                <meta name="twitter:creator" content="@mostofreddy"/>
-                <meta name="twitter:description" content="{{excerpt characters="220"}}"/>
-                <meta name="twitter:title" content="{{title}}"/>
-                
-            {{/contentFor}}
-
-
-
             <header class="post-header">
                 <span class="post-meta">
                     <i class="fa fa-calendar"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date published_at timeago="true"}}</time> 

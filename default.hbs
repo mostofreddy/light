@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{! Page Meta }}
-    <!--<title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     <!-- meta data para facebook / twitter -->
@@ -16,16 +19,30 @@
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
 
     <!-- addthis plugin -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53aa73510f9e5969"></script>
+    <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53aa73510f9e5969"></script>-->
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
+
+    <div id="paralax-bg" class="paralax-bg" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
+    <div class="jumbotron paralax-up">
+        <div class="container">
+            <h1><a href="http://www.mostofreddy.com.ar" title="{{@blog.title}}">{{@blog.title}}</a></h1>
+            <p class="hidden-xs">{{@blog.description}}</p>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/federicolozadamosto" title="Linkedin"><i class="fa fa-linkedin" ></i></a>
+                <a href="http://www.github.com/mostofreddy" title="Github"><i class="fa fa-github"></i></a>
+                <a href="http://www.twitter.com/mostofreddy" title="Twitter"><i class="fa fa-twitter" ></i></a>
+                <a href="http://www.facebook.com/mostofreddy" title="Facebook"><i class="fa fa-facebook" ></i></a>
+            </div>
+        </div>
+    </div>
 
     {{! Everything else gets inserted here }}
     {{{body}}}

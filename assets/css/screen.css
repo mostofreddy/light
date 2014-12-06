@@ -7,15 +7,9 @@
  2.  General
  3.  Main
  4.  Post
- 4.  Paralax
+ 5.  Paralax
 
 
- 3.  Utilities
- 4.  General
- 5.  Single Post
- 6.  Third Party Elements
- 7.  Pagination
- 8.  Footer
  9.  Media Queries (Tablet)
  10. Media Queries (Mobile)
 */
@@ -93,8 +87,8 @@ p {
 }
 
 .site-footer {
-    background-color: #212327;
-    color: #fff;
+    /*background-color: #212327;*/
+    /*color: #fff;*/
     font-size: 1.5rem;
     letter-spacing: 0.2px;
     padding: 50px 0;
@@ -131,6 +125,15 @@ p {
 }
 .post-meta i {
     color: #898989;
+}
+
+.post-content img {
+    border:1px solid #ccc !important;
+    padding:3px !important;
+
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 /* author */
@@ -177,14 +180,48 @@ p {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height:300px;
+    height:500px;
 }
 .paralax-up {
-    height: 300px;
+    height: 500px;
     color: white;
-    text-shadow: #444 0 1px 1px;
-    background:transparent;
+    /*text-shadow: #444 0 1px 1px;*/
+    background:none;
+    position:relative;
+}
+
+.paralax-up a,
+.paralax-up a:hover,
+.paralax-up a:focus {
+    color:#fff;
+}
+
+.paralax-up .container {
+    background-color:rgba(0,0,0,0.5);
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+
+.paralax-up .social {
+    font-size:20px;
+    bottom:10px;
+    right:10px;
+    position:absolute;
 }
 
 
 
+
+
+/* 10. Media
+************************************************************************/
+@media (max-width: 768px) {
+    .paralax-bg {
+        height:200px;
+    }
+    .paralax-up {
+        height: 200px;
+    }
+}

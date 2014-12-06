@@ -1,7 +1,4 @@
 {{#contentFor "meta"}}
-    <!-- Classic Meta Tags -->
-    <title>Mostofreddy | blog</title>
-    <meta name="description" content="{{meta_description}}">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Mostofreddy | blog"/>
@@ -19,19 +16,17 @@
     
 {{/contentFor}}
 
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
 
 {{!< default}}
 
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-<div class="paralax-bg" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
-<div class="jumbotron paralax-up">
-    <div class="container">
-        <h1>{{@blog.title}}</h1>
-        <p>{{@blog.description}}</p>
-    </div>
-</div>
+
 
 {{! The main content area on the homepage }}
 <main class="container container-main" role="main">

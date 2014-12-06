@@ -1,9 +1,17 @@
-function parallax(){
-    var jumboHeight = $('.paralax-up').outerHeight();
-    var scrolled = $(window).scrollTop();
-    $('.paralax-bg').css('height', (jumboHeight-scrolled) + 'px');
+// Option 2
+
+var jumboHeight = $('.paralax-up').outerHeight();
+var obj = document.getElementById('paralax-bg');
+var h;
+
+function onScroll() {
+
+	h = jumboHeight - window.scrollY;
+	if (h < 0) {
+		h = 0;
+	}
+	obj.style.height = h + 'px';
+
 }
 
-$(window).scroll(function(e){
-    parallax();
-});
+window.addEventListener('scroll', onScroll, false);
