@@ -6,12 +6,12 @@
  1.  Fonts
  2.  General
  3.  Main
- 4.  Post
- 5.  Paralax
-
-
- 9.  Media Queries (Tablet)
- 10. Media Queries (Mobile)
+ 4.  Footer
+ 5.  Post list
+ 6.  Post
+ 7.  Author
+ 8.  Paralax
+ 10. Media
 */
 
 /* 0. Includes
@@ -48,18 +48,8 @@ h6,
     font-family: 'Oleo Script', Arial !important;
 }
 
-
 /* 2. General
 ************************************************************************/
-
-a {
-    color: #5D5D5D;
-}
-a:hover {
-    text-decoration:none;
-    color: #E70505;
-}
-
 p {
     font-size:16px;
     line-height: 22px;
@@ -72,56 +62,40 @@ p {
     background-color:#fff;
 }
 
-.btn-readmore {
-    text-transform: uppercase;
-    /*background-color: #FF5252;
-    background-color: #FC2727;*/
-    background-color: #FF1818;
-    border-color: #E70505;
-    color: #fff;
-    margin-top:15px;
-}
-.btn-readmore:hover {
-    background-color: #E70505;
-    border-color: #E70505;
-}
-
+/* 4. Footer
+************************************************************************/
 .site-footer {
-    /*background-color: #212327;*/
-    /*color: #fff;*/
     font-size: 1.5rem;
     letter-spacing: 0.2px;
     padding: 50px 0;
     text-align: center;
 }
-.site-footer a {
-    color: #E70505;
-}
 
-/* 4. Post
+/* 5. Post list
 ************************************************************************/
-.container-main .post {
-    border-bottom: 1px dotted #ccc;
-    padding-bottom:40px;
-    padding-top:40px;
+.btn-readmore {
+    text-transform: uppercase;
+    background-color: #4C6B8A;
+    border-color: #4C6B8A;
+    color: #fff;
+}
+.btn-readmore:hover {
+    background-color: #2c3e50;
+    border-color: #2c3e50;
+    color: #fff;
 }
 
-.container-main .post:first-child {
-    padding-top: 20px;
+.post-list {
+    padding-top:20px;
+    padding-bottom:20px;
+    border-bottom:1px dashed #ccc;
+    overflow:hidden;
 }
 
-/* header */
-.post-header h1 {
-    margin-top:5px;
-}
+/* 6. Post
+************************************************************************/
 .post-header {
     padding-bottom:10px;
-}
-
-/* meta */
-.post-meta a {
-    color: #FF1818;
-    color: #E70505;
 }
 .post-meta i {
     color: #898989;
@@ -136,7 +110,8 @@ p {
     margin: 0 auto;
 }
 
-/* author */
+/* 7. Author
+************************************************************************/
 .author {
     margin-top:50px;
     margin-bottom:30px;
@@ -167,7 +142,8 @@ p {
     margin-bottom:30px;
 }
 
-/* 5. Paralax
+
+/* 8. Paralax
 ************************************************************************/
 .paralax-bg {
     background-position: center center;
@@ -210,10 +186,6 @@ p {
     right:10px;
     position:absolute;
 }
-
-
-
-
 
 /* 10. Media
 ************************************************************************/

@@ -21,12 +21,6 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-{{!< default}}
-
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
-
 
 {{! The main content area on the homepage }}
 <main class="container container-main" role="main">
@@ -34,7 +28,7 @@
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
 
-    <article class="{{post_class}}">
+    <article class="{{post_class}} post-list">
 
         <header class="post-header">
             <span class="post-meta">
@@ -48,7 +42,7 @@
             <p>{{excerpt characters="300"}}&hellip;</p>
         </section>
 
-        <a href="{{url}}" class="btn btn-sm btn-readmore">Read more <i class="fa fa-angle-double-right "></i></a>
+        <a href="{{url}}" class="btn btn-sm btn-readmore pull-right">Read more <i class="fa fa-chevron-right "></i></a>
             
     </article>
 
