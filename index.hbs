@@ -13,7 +13,7 @@
     <meta name="twitter:creator" content="@mostofreddy"/>
     <meta name="twitter:description" content="{{meta_description}}"/>
     <meta name="twitter:title" content="Mostofreddy | blog"/>
-    
+
 {{/contentFor}}
 
 {{!< default}}
@@ -23,7 +23,7 @@
 
 
 {{! The main content area on the homepage }}
-<main class="container container-main" role="main">
+<main class="container container-main">
 
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
@@ -31,9 +31,9 @@
     <article class="{{post_class}} post-list">
 
         <header class="post-header">
-            <span class="post-meta">
-                <i class="fa fa-calendar"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date published_at timeago="true"}}</time> 
-                &nbsp;<i class="fa fa-tag"></i> {{tags prefix="Tagged in: "}}
+            <span class="post-meta text-info">
+                <i class="fa fa-calendar text-info"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date published_at timeago="true"}}</time>
+                &nbsp;<i class="fa fa-tag text-info"></i> {{tags prefix=""}}
             </span>
             <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
         </header>
@@ -42,8 +42,8 @@
             <p>{{excerpt characters="300"}}&hellip;</p>
         </section>
 
-        <a href="{{url}}" class="btn btn-sm btn-readmore pull-right">Read more <i class="fa fa-chevron-right "></i></a>
-            
+        <a href="{{url}}" class="btn btn-sm btn-readmore pull-right">Continuar leyendo <i class="fa fa-chevron-right "></i></a>
+
     </article>
 
     {{/foreach}}
@@ -53,11 +53,11 @@
     <ul class="pager">
 
         {{#if pagination.prev}}
-            <li class="previous"><a href="{{pageUrl pagination.prev}}">&larr; Older</a></li>
+            <li class="previous"><a href="{{pageUrl pagination.prev}}">&larr; Newer</a></li>
         {{/if}}
-        
+
         {{#if pagination.next}}
-            <li class="next"><a href="{{pageUrl pagination.next}}">Newer &rarr;</a></li>
+            <li class="next"><a href="{{pageUrl pagination.next}}">Older &rarr;</a></li>
         {{/if}}
 
     </ul>
