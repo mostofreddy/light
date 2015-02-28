@@ -1,27 +1,15 @@
 /* Table of Contents
 ************************************************************************/
 
-/*
- 0.  Includes
- 1.  Fonts
- 2.  General
- 3.  Main
- 4.  Footer
- 5.  Post list
- 6.  Post
- 7.  Author
- 8.  Paralax
- 10. Media
-*/
-
-/* 0. Includes
+/* Includes
 ************************************************************************/
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 @import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 
 
-/* 1. Fonts
+/* Fonts
 ************************************************************************/
 
 body,
@@ -36,186 +24,139 @@ h6,
 .h3,
 .h4,
 .h5,
-.h6 {
-    /*font-family: 'Roboto', cursive !important;*/
-    font-family: 'Roboto', Arial !important;
+.h6,
+div,
+strong,
+p,
+a {
+    font-family: 'Lato', Arial !important;
     font-style: normal;
     font-weight: 300;
 }
 
-.jumbotron h1 {
-    /*font-family: 'Oleo Script', cursive !important;*/
-    font-family: 'Oleo Script', Arial !important;
+strong {
+    font-weight: 400;
 }
 
-/* 2. General
-************************************************************************/
+.btn-readmore {
+    font-family: 'Lato', Arial !important;
+    font-style: normal;
+    font-weight: 300;
+    font-size:18px;
+    line-height: 32px;
+}
 
 body {
     font-size:18px;
     line-height: 32px;
 }
 
-a {
-    color:#666;
-}
+/* General
+************************************************************************/
+
 
 a:hover {
     text-decoration: none;
 }
 
-/* 3. Main
-************************************************************************/
-.container-main {
-    max-width: 900px;
-    background-color:#fff;
-}
-
-/* 4. Footer
+/* Footer
 ************************************************************************/
 .site-footer {
     border-top:1px solid #d8d8d8;
-    /*font-size: 1.5rem;*/
-    /*letter-spacing: 0.2px;*/
     font-size:14px;
     line-height:20px;
     padding:30px 0;
     text-align: center;
     margin-top:10px;
 }
-
 .site-footer .madeinbsas {
     font-size:20px;
     line-height: 40px;
 }
 
-/* 5. Post list
+/* Container
 ************************************************************************/
-.btn-readmore {
-    text-transform: uppercase;
-    background-color: #4C6B8A;
-    border-color: #4C6B8A;
-    color: #fff;
-}
-.btn-readmore:hover {
-    background-color: #2c3e50;
-    border-color: #2c3e50;
-    color: #fff;
+.container-main {
+    max-width: 800px;
 }
 
-.post-list {
-    padding-top:20px;
-    padding-bottom:20px;
-    border-bottom:1px dashed #ccc;
-    overflow:hidden;
-}
 
-/* 6. Post
+/* Post - Header
 ************************************************************************/
 .post-header {
-    font-size: 16px;
-    line-height:20px;
+    margin-bottom:10px;
 }
 
-.post-content img {
-    border:1px solid #ccc !important;
-    padding:3px !important;
-
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-/* 6. Post header
-************************************************************************/
-.post header a {
-    font-weight: 400;
-}
-
-/* 7. Author
-************************************************************************/
-.author {
-    margin-top:50px;
-    margin-bottom:30px;
-    padding-top:30px;
-    padding-bottom:20px;
-    border-top: 1px dotted #ccc;
-    border-bottom: 1px dotted #ccc;
-}
-.author .attr {
-    font-size:12px;
-    text-transform: uppercase;
+.post-header h1 {
     margin-bottom:0;
 }
 
-.author h4 {
-    font-weight: 400;
-    margin-top:5px;
+.post-header h1 a {
+    color:#333;
 }
-.author .authorimage {
-    width:80px;
-    height:80px;
-    border-radius: 50%;
-    border-color: #333;
-    background-position: center center !important;
-    background-size: cover !important;
-    float: left;
-    margin-right: 10px;
-    margin-bottom:30px;
+
+.post-header h1 a:hover,
+.post-header h1 a:active {
+    color:#111;
+}
+
+.post-header .post-meta {
+    padding:5px;
+    font-size:16px;
+}
+.post-header .post-meta a {
+    background-color: #ecf0f1;
+    padding-left:8px;
+    padding-right:8px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color:#333;
+}
+
+.post-header .post-meta a:hover {
+    background-color: #333;
+    color:#ecf0f1;
+}
+
+.post-header .post-meta i {
+    color: #666;
+    font-size:16px;
 }
 
 
-/* 8. Paralax
+
+/* Post
 ************************************************************************/
-.paralax-bg {
-    background-position: center center;
-    width: 100%;
-    position: fixed;
-    z-index: -1;
-    top:0;
-    left:0;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height:500px;
-}
-.paralax-up {
-    height: 500px;
-    color: white;
-    /*text-shadow: #444 0 1px 1px;*/
-    background:none;
-    position:relative;
+.post {
+    /*padding-bottom:30px;*/
+    padding-top:20px;
+    border-bottom: 1px dotted #ccc;.post-meta
 }
 
-.paralax-up a,
-.paralax-up a:hover,
-.paralax-up a:focus {
-    color:#fff;
+.btn-readmore {
+    background-color: #ecf0f1;
+    color:#333;
 }
 
-.paralax-up .container {
-    background-color:rgba(0,0,0,0.5);
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
+
+.btn-readmore:hover {
+    background-color: #333;
+    color:#ecf0f1;
 }
 
-.paralax-up .social {
-    font-size:20px;
-    bottom:10px;
-    right:10px;
-    position:absolute;
-}
-
-/* 10. Media
+/* Paginador
 ************************************************************************/
-@media (max-width: 768px) {
-    .paralax-bg {
-        height:200px;
-    }
-    .paralax-up {
-        height: 200px;
-    }
+
+.pager {
+    margin-top:25px;
+}
+.next a, .previous a {
+    background-color: #ecf0f1 !important;
+    color:#333;
+}
+
+.next a:hover, .previous a:hover {
+    background-color: #333 !important;
+    color:#ecf0f1;
 }

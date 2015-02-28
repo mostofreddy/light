@@ -1,20 +1,21 @@
 {{#contentFor "meta"}}
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Mostofreddy | blog"/>
+    <meta property="og:title" content="{{@blog.title}}"/>
     <meta property="og:url" content="http://mostofreddy.com.ar"/>
-    <meta property="og:site_name" content="Mostofreddy | blog"/>
+    <meta property="og:site_name" content="{{@blog.title}}"/>
     <meta property="og:type" content="blog"/>
-    <meta property="og:description" content="{{meta_description}}" />
+    <meta property="og:description" content="{{@blog.description}}" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@mostofreddy"/>
     <meta name="twitter:creator" content="@mostofreddy"/>
-    <meta name="twitter:description" content="{{meta_description}}"/>
-    <meta name="twitter:title" content="Mostofreddy | blog"/>
+    <meta name="twitter:description" content="{{@blog.description}}"/>
+    <meta name="twitter:title" content="{{@blog.title}}"/>
 
 {{/contentFor}}
+
 
 {{!< default}}
 
@@ -28,38 +29,20 @@
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
 
-    <article class="{{post_class}} post-list">
+    <article class="{{post_class}} clearfix">
 
-        <header class="post-header">
-            <span class="post-meta text-info">
-                <i class="fa fa-calendar text-info"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date published_at timeago="true"}}</time>
-                &nbsp;<i class="fa fa-tag text-info"></i> {{tags prefix=""}}
-            </span>
-            <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
-        </header>
+        {{> "postheader"}}
 
         <section class="post-excerpt">
             <p>{{excerpt characters="300"}}&hellip;</p>
         </section>
 
-        <a href="{{url}}" class="btn btn-sm btn-readmore pull-right">Continuar leyendo <i class="fa fa-chevron-right "></i></a>
+        <a href="{{url}}" class="btn btn-sm btn-readmore pull-right" title="Continuar leyendo">Continuar leyendo <i class="fa fa-angle-right"></i></a>
 
     </article>
 
     {{/foreach}}
 
-    {{!! After all the posts, we have the previous/next pagination links }}
-
-    <ul class="pager">
-
-        {{#if pagination.prev}}
-            <li class="previous"><a href="{{pageUrl pagination.prev}}">&larr; Newer</a></li>
-        {{/if}}
-
-        {{#if pagination.next}}
-            <li class="next"><a href="{{pageUrl pagination.next}}">Older &rarr;</a></li>
-        {{/if}}
-
-    </ul>
+    {{> "paginator"}}
 
 </main>

@@ -2,15 +2,22 @@
 <html>
 <head>
     {{! Document Settings }}
-    <meta charset="utf-8" />
+    <meta http-equiv=”Content-Type” content=”text/html;charset=UTF-8”>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{! Page Meta }}
-    <title>{{meta_title}}</title>
+    <title>{{#is "post"}}{{@blog.title}} - {{/is}}{{meta_title}}</title>
+
+    {{#is "post"}}
     <meta name="description" content="{{meta_description}}" />
+    {{else}}
+    <meta name="description" content="{{@blog.description}}" />
+    {{/is}}
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="author" content="Federico Lozada Mosto - Mostofreddy">
 
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
@@ -30,58 +37,36 @@
 </head>
 <body class="{{body_class}}">
 
-    <div id="paralax-bg" class="paralax-bg" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
-    <div class="jumbotron paralax-up">
-        <div class="container">
-            <h1><a href="http://www.mostofreddy.com.ar" title="{{@blog.title}}">{{@blog.title}}</a></h1>
-            <p class="hidden-xs">{{@blog.description}}</p>
-            <div class="social">
-                <a href="https://www.linkedin.com/in/federicolozadamosto" title="Linkedin"><i class="fa fa-linkedin" ></i></a>
-                <a href="http://www.github.com/mostofreddy" title="Github"><i class="fa fa-github"></i></a>
-                <a href="http://www.twitter.com/mostofreddy" title="Twitter"><i class="fa fa-twitter" ></i></a>
-                <a href="http://www.facebook.com/mostofreddy" title="Facebook"><i class="fa fa-facebook" ></i></a>
-            </div>
-        </div>
-    </div>
-
     {{! Everything else gets inserted here }}
     {{{body}}}
 
-    <!-- <footer class="site-footer">
-        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
-        <div class="inner">
-             <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
-             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>
-        </div>
-    </footer> -->
-
 
     <footer class="site-footer">
-        <a href="#" ttile="Twitter">
+        <a href="https://twitter.com/mostofreddy" title="Twitter" target="blank">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
             </span>
         </a>
-        <a href="#" title="Facebook">
+        <a href="https://www.facebook.com/mostofreddy" title="Facebook" target="blank">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
             </span>
         </a>
-        <a href="#" ttile="RSS">
+        <a href="http://mostofreddy.com.ar/rss" title="RSS" target="blank">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
             </span>
         </a>
-        <a href="#" ttile="LinkedIn">
+        <a href="http://ar.linkedin.com/in/federicolozadamosto" title="LinkedIn" target="blank">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
             </span>
         </a>
-        <a href="#" ttile="Github">
+        <a href="https://github.com/mostofreddy" title="Github" target="blank">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-github-alt  fa-stack-1x fa-inverse"></i>
@@ -100,7 +85,6 @@
     {{! The main JavaScript file for Mosto }}
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>-->
 
 
 <script>

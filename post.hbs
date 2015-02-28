@@ -1,3 +1,12 @@
+{{#contentFor "meta"}}
+
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "5adeefc8-b469-405f-9429-4c60792df37e", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+{{/contentFor}}
+
+
 {{!< default}}
 
 {{! The comment above "< default" means - insert everything in this file into
@@ -10,15 +19,14 @@
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
-            <!-- meta for facebook / twitter / google -->
+            {{#contentFor "meta"}}
 
-            <header class="post-header">
-                <span class="post-meta text-info">
-                    <i class="fa fa-calendar text-info"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date published_at timeago="true"}}</time>
-                    &nbsp;<i class="fa fa-tag text-info"></i> {{tags prefix=""}}
-                </span>
-                <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
-            </header>
+                <meta name="keywords" content='{{tags autolink="false"}}'>
+
+            {{/contentFor}}
+
+
+            {{> "postheader"}}
 
             <section class="post-content">
                 {{content}}
@@ -32,6 +40,15 @@
                 <p class="bio">{{author.bio}}</p>
             </section>
 
+            <div class="meta-social">
+
+                <span class='st_sharethis_hcount' displayText='ShareThis'></span>
+                <span class='st_facebook_hcount' displayText='Facebook'></span>
+                <span class='st_twitter_hcount' displayText='Tweet'></span>
+                <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+                <span class='st_email_hcount' displayText='Email'></span>
+
+            </div>
 
             <!-- DISCUS
             --------------------------------------->

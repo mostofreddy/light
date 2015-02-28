@@ -1,0 +1,13 @@
+{{!! After all the posts, we have the previous/next pagination links }}
+
+<ul class="pager">
+
+    {{#if pagination.prev}}
+        <li class="previous"><a href="{{pageUrl pagination.prev}}">&larr; Newer</a></li>
+    {{/if}}
+
+    {{#if pagination.next}}
+        <li class="next"><a href="{{pageUrl pagination.next}}">Older &rarr;</a></li>
+    {{/if}}
+
+</ul>
